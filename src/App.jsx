@@ -4,7 +4,7 @@ import { ChangeInfo } from "./components/ChangeInfo";
 import { RequestKredit } from "./components/RequestKredit";
 import { Login } from "./components/Login";
 import { SignIn } from "./components/SignIn";
-import { FindBranch } from "./components/FindBranch";
+import { FindBranch } from "./components/FindBranch.jsx";
 import { NavLink, Routes, Route, Navigate } from "react-router-dom";
 import { useContext } from "react";
 import { AppContext } from "./AppContext";
