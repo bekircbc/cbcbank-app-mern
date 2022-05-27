@@ -17,14 +17,14 @@ function App() {
         <img src="images/icon.png" alt="logo" />
         <h1>{siteTitle}</h1>
       </div>
-      <hr />
-      <NavLink to="/transfermoney">Transfer Money</NavLink> |{" "}
-      <NavLink to="/changeinfo">Change Personal Information</NavLink> |{" "}
-      <NavLink to="/requestkredit">Request Kredit</NavLink> |{" "}
-      <NavLink to="/findbranch">Find Branch</NavLink> |{" "}
-      <NavLink to="/login">Login</NavLink> |{" "}
-      <NavLink to="/signin">Signin</NavLink>
-      <hr />
+      <div className="navbar">
+        <NavLink to="/transfermoney">Transfer Money</NavLink> |{" "}
+        <NavLink to="/changeinfo">Change Personal Information</NavLink> |{" "}
+        <NavLink to="/requestkredit">Request Kredit</NavLink> |{" "}
+        <NavLink to="/findbranch">Find Branch</NavLink> |{" "}
+        <NavLink to="/login">Login</NavLink> |{" "}
+        <NavLink to="/signin">Signin</NavLink>
+      </div>
       <Routes>
         <Route path="/transfermoney" element={<TransferMoney />} />
         <Route path="/changeinfo" element={<ChangeInfo />} />
