@@ -13,17 +13,19 @@ function App() {
   const { siteTitle } = useContext(AppContext);
   return (
     <div className="App">
-      <div className="title">
-        <img src="images/icon.png" alt="logo" />
-        <h1>{siteTitle}</h1>
-      </div>
-      <div className="navbar">
-        <NavLink to="/transfermoney">Transfer Money</NavLink> |{" "}
-        <NavLink to="/changeinfo">Change Personal Information</NavLink> |{" "}
-        <NavLink to="/requestkredit">Request Kredit</NavLink> |{" "}
-        <NavLink to="/findbranch">Find Branch</NavLink> |{" "}
-        <NavLink to="/login">Login</NavLink> |{" "}
-        <NavLink to="/signin">Signin</NavLink>
+      <div className="header">
+        <div className="title">
+          <img src="images/icon.png" alt="logo" />
+          <h1>{siteTitle}</h1>
+        </div>
+        <div className="navbar">
+          <NavLink to="/transfermoney">Transfer Money</NavLink>
+          <NavLink to="/changeinfo">Change Personal Information</NavLink>
+          <NavLink to="/requestkredit">Request Kredit</NavLink>
+          <NavLink to="/findbranch">Find Branch</NavLink>
+          <NavLink to="/login">Login</NavLink>
+          <NavLink to="/signin">Signin</NavLink>
+        </div>
       </div>
       <Routes>
         <Route path="/transfermoney" element={<TransferMoney />} />
