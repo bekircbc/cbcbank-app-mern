@@ -1,28 +1,32 @@
 {
   "logindata": [
     {
-      "id": "1",
+      "id": "167319812",
       "owner": "Keyser Söze",
       "iban": "DE4935",
-      "pin": 1111
+      "pin": 1111,
+      "isLoggedIn": false
     },
     {
-      "id": "2",
+      "id": "25632323298",
       "owner": "Harold Finch",
       "iban": "DE4936",
-      "pin": 2222
+      "pin": 2222,
+      "isLoggedIn": false
     },
     {
-      "id": "3",
+      "id": "363238297",
       "owner": "John Reese",
       "iban": "DE4937",
-      "pin": 3333
+      "pin": 3333,
+      "isLoggedIn": false
     },
     {
-      "id": "4",
+      "id": "480921887323",
       "owner": "Jonas Kahnwald",
       "iban": "DE4938",
-      "pin": 4444
+      "pin": 4444,
+      "isLoggedIn": false
     }
   ],
   "accounts": [
