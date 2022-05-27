@@ -1,22 +1,30 @@
-import { createContext } from "react";
+import { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
 export const AppContext = createContext();
 
+const accSource = "./src/data/db.json";
+
 export const AppProvider = ({ children }) => {
   const siteTitle = "CBC Bank";
-  // const [books, setBooks] = useState([]);
+  const [data, setData] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // useEffect(() => {
-  //   (async () => {
-  //     setBooks((await axios.get(bookUrl)).data);
-  //   })();
-  // }, []);
+  useEffect(() => {
+    (async () => {
+      setData((await axios.get(accSource)).data);
+    })();
+  }, []);
+
+  console.log(data);
 
   return (
     <AppContext.Provider
       value={{
         siteTitle,
+        data,
+        isLoggedIn,
+        setIsLoggedIn,
       }}
     >
       {children}

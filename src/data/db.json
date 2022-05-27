@@ -1,4 +1,30 @@
 {
+  "logindata": [
+    {
+      "id": "1",
+      "owner": "Keyser Söze",
+      "iban": "DE4935",
+      "pin": 1111
+    },
+    {
+      "id": "2",
+      "owner": "Harold Finch",
+      "iban": "DE4936",
+      "pin": 2222
+    },
+    {
+      "id": "3",
+      "owner": "John Reese",
+      "iban": "DE4937",
+      "pin": 3333
+    },
+    {
+      "id": "4",
+      "owner": "Jonas Kahnwald",
+      "iban": "DE4938",
+      "pin": 4444
+    }
+  ],
   "accounts": [
     {
       "id": "ks",
