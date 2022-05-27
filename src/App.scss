@@ -2,11 +2,12 @@
   text-align: center;
   .header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    margin: 20px;
     .title {
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       align-items: center;
       gap: 20px;
       img {
@@ -15,7 +16,8 @@
     }
     .navbar {
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
+      gap: 1rem;
     }
   }
 }
