@@ -20,7 +20,7 @@ function App() {
         </div>
         <div className="navbar">
           <NavLink to="/transfermoney">Transfer Money</NavLink>
-          <NavLink to="/changeinfo">Change Personal Information</NavLink>
+          <NavLink to="/changeinfo">Change Info</NavLink>
           <NavLink to="/requestkredit">Request Kredit</NavLink>
           <NavLink to="/findbranch">Find Branch</NavLink>
           <NavLink to="/login">Login</NavLink>

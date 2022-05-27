@@ -1,7 +1,7 @@
 export const SignIn = () => {
   return (
     <>
-      <h1>Change Information</h1>
+      <h1>Sign In</h1>
     </>
   );
 };

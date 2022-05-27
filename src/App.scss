@@ -1,23 +1,40 @@
-.App {
-  text-align: center;
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px;
-    .title {
+body {
+  .App {
+    text-align: center;
+    .header {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      img {
-        width: 120px;
+      background-color: #073761;
+      width: 100vw;
+      height: 5rem;
+      color: white;
+      .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        gap: 20px;
+        img {
+          width: 80px;
+        }
       }
-    }
-    .navbar {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
+      .navbar {
+        display: flex;
+        justify-content: center;
+        gap: 1.4rem;
+        margin: 20px;
+        padding: 20px;
+        a {
+          text-decoration: none;
+          font-size: 1rem;
+          color: #e0cdaa;
+        }
+        :hover {
+          color: white;
+          font-size: 1.1rem;
+        }
+      }
     }
   }
 }

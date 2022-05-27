@@ -1,7 +1,7 @@
 export const TransferMoney = () => {
   return (
     <>
-      <h1>Change Information</h1>
+      <h1>Transfer Money</h1>
     </>
   );
 };

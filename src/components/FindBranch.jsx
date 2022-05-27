@@ -1,7 +1,7 @@
 export const FindBranch = () => {
   return (
     <>
-      <h1>Change Information</h1>
+      <h1>Find Branch</h1>
     </>
   );
 };
