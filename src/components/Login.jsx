@@ -1,43 +1,37 @@
 import { useContext, useRef } from "react";
 import { AppContext } from "../AppContext";
+import { Home } from "./Home";
 
 export const Login = () => {
-  const { data } = useContext(AppContext);
+  const {
+    data,
+    setCurrentAccount,
+    isLoggedIn,
+    setIsLoggedIn,
+    currentLogindata,
+    setCurrentLogindata,
+    isLoggedInHandler,
+    idInputRef,
+    pinInputRef,
+  } = useContext(AppContext);
 
-  const idInputRef = useRef();
-  const pinInputRef = useRef();
-  function isLoggedInHandler(event) {
-    event.preventDefault();
-    const enteredId = titleInputRef.current.value;
-    const enteredPin = imageInputRef.current.value;
-
-    const currentAccount = data.logindata.find(
-      (m) => m.id === enteredId && m.pin === enteredPin
-    );
-
-    fetch(
-      "https://basic-streaming-app-default-rtdb.firebaseio.com/meetups.json",
-      {
-        method: "POST",
-        body: JSON.stringify(meetupData),
-        headers: { "Content-Type": "application/json" },
-      }
-    );
-  }
   return (
     <>
       <h1>Login</h1>
+
       {isLoggedIn ? (
-        <h2>AA</h2>
+        <Home />
       ) : (
-        <form className="formCard" onSubmit={submitHandler}>
-          <label htmlFor="title">Meetup Title</label>
-          <input type="text" required id="title" ref={titleInputRef} />
+        <form className="formCard">
+          <label htmlFor="id">User Id</label>
+          <input type="text" required id="id" ref={idInputRef} />
 
-          <label htmlFor="image">Meetup Image</label>
-          <input type="url" required id="image" ref={imageInputRef} />
+          <label htmlFor="pin">Pin</label>
+          <input type="number" required id="pin" ref={pinInputRef} />
 
-          <button className="btnAddMeetup">Add Meetup</button>
+          <button className="btnLogin" onClick={isLoggedInHandler}>
+            Login
+          </button>
         </form>
       )}
     </>
