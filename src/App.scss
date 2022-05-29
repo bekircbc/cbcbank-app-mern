@@ -17,15 +17,15 @@ body {
         margin: 0;
         gap: 0.5rem;
         img {
-          width: 3.5rem;
-          height: 3.5rem;
+          width: 3rem;
+          height: 3rem;
         }
       }
       .navbar {
         display: flex;
         justify-content: center;
         gap: 0.8rem;
-        margin: 0;
+        margin-bottom: 0.7rem;
         a {
           text-decoration: none;
           font-size: 1rem;
@@ -34,6 +34,23 @@ body {
         :hover {
           color: white;
           box-shadow: #e0cdaa;
+        }
+      }
+    }
+    .login {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .formCard {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 25rem;
+        gap: 0.5rem;
+        .btnLogin {
+          width: 5rem;
         }
       }
     }

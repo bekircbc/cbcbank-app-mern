@@ -1,39 +1,35 @@
 import { useContext, useRef } from "react";
 import { AppContext } from "../AppContext";
-import { Home } from "./Home";
+// import { Home } from "./Home";
 
 export const Login = () => {
   const {
-    data,
-    setCurrentAccount,
-    isLoggedIn,
-    setIsLoggedIn,
-    currentLogindata,
-    setCurrentLogindata,
+    // data,
+    // setCurrentAccount,
+    // isLoggedIn,
+    // setIsLoggedIn,
+    // currentLogindata,
+    // setCurrentLogindata,
     isLoggedInHandler,
     idInputRef,
     pinInputRef,
   } = useContext(AppContext);
 
   return (
-    <>
+    <div className="login">
       <h1>Login</h1>
 
-      {isLoggedIn ? (
-        <Home />
-      ) : (
-        <form className="formCard">
-          <label htmlFor="id">User Id</label>
-          <input type="text" required id="id" ref={idInputRef} />
+      <form className="formCard">
+        <label htmlFor="id">User Id</label>
+        <input type="text" required id="id" ref={idInputRef} />
 
-          <label htmlFor="pin">Pin</label>
-          <input type="number" required id="pin" ref={pinInputRef} />
+        <label htmlFor="pin">Pin</label>
+        <input type="number" required id="pin" ref={pinInputRef} />
 
-          <button className="btnLogin" onClick={isLoggedInHandler}>
-            Login
-          </button>
-        </form>
-      )}
-    </>
+        <button className="btnLogin" onClick={isLoggedInHandler}>
+          Login
+        </button>
+      </form>
+    </div>
   );
 };
