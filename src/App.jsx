@@ -10,7 +10,7 @@ import { useContext } from "react";
 import { AppContext } from "./AppContext";
 
 function App() {
-  const { siteTitle } = useContext(AppContext);
+  const { siteTitle, isLoggedIn } = useContext(AppContext);
   return (
     <div className="App">
       <div className="header">
@@ -18,24 +18,55 @@ function App() {
           <img src="images/icon.png" alt="logo" />
           <h1>{siteTitle}</h1>
         </div>
-        <div className="navbar">
-          <NavLink to="/transfermoney">Transfer Money</NavLink>
-          <NavLink to="/changeinfo">Change Info</NavLink>
-          <NavLink to="/requestkredit">Request Kredit</NavLink>
-          <NavLink to="/findbranch">Find Branch</NavLink>
-          <NavLink to="/login">Login</NavLink>
-          <NavLink to="/signin">Signin</NavLink>
-        </div>
+        {isLoggedIn ? (
+          <>
+            <div className="navbar">
+              <NavLink to="/transfermoney">Transfer Money</NavLink>
+              <NavLink to="/changeinfo">Change Info</NavLink>
+              <NavLink to="/requestkredit">Request Kredit</NavLink>
+              <NavLink to="/findbranch">Find Branch</NavLink>
+              <NavLink to="/login">Login</NavLink>
+              <NavLink to="/signin">Signin</NavLink>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="navbar">
+              <NavLink to="/transfermoney">Transfer Money</NavLink>
+              <NavLink to="/changeinfo">Change Info</NavLink>
+              <NavLink to="/requestkredit">Request Kredit</NavLink>
+              <NavLink to="/findbranch">Find Branch</NavLink>
+              <NavLink to="/login">Login</NavLink>
+              <NavLink to="/signin">Signin</NavLink>
+            </div>
+          </>
+        )}
       </div>
-      <Routes>
-        <Route path="/transfermoney" element={<TransferMoney />} />
-        <Route path="/changeinfo" element={<ChangeInfo />} />
-        <Route path="/requestkredit" element={<RequestKredit />} />
-        <Route path="/findbranch" element={<FindBranch />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/" element={<Navigate to="/login" replace />} />
-      </Routes>
+      {isLoggedIn ? (
+        <>
+          <Routes>
+            <Route path="/transfermoney" element={<TransferMoney />} />
+            <Route path="/changeinfo" element={<ChangeInfo />} />
+            <Route path="/requestkredit" element={<RequestKredit />} />
+            <Route path="/findbranch" element={<FindBranch />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/" element={<Navigate to="/login" replace />} />
+          </Routes>
+        </>
+      ) : (
+        <>
+          <Routes>
+            <Route path="/transfermoney" element={<TransferMoney />} />
+            <Route path="/changeinfo" element={<ChangeInfo />} />
+            <Route path="/requestkredit" element={<RequestKredit />} />
+            <Route path="/findbranch" element={<FindBranch />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/" element={<Navigate to="/login" replace />} />
+          </Routes>
+        </>
+      )}
     </div>
   );
 }
