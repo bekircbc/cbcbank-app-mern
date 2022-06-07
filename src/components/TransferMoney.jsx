@@ -1,7 +1,9 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { AppContext } from "../AppContext";
 
 export const TransferMoney = () => {
+  const idInputRef = useRef();
+  const pinInputRef = useRef();
   const {
     isLoggedIn,
     // isLoggedIn,

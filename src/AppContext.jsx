@@ -3,13 +3,14 @@ import axios from "axios";
 
 export const AppContext = createContext();
 
-const accSource = "./src/data/db.json";
-
+const accUrlAccounts = "http://localhost:4556/accounts";
+const accUrlWerbung = "http://localhost:4556/werbung";
 export const AppProvider = ({ children }) => {
   const siteTitle = "CBC Bank";
-  const [data, setData] = useState([]);
+  const [accounts, setAccounts] = useState([]);
+  const [werbung, setWerbung] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [currentAccount, setCurrentAccount] = useState();
+  const [currentAccount, setCurrentAccount] = useState({});
   // const [currentLogindata, setCurrentLogindata] = useState();
 
   // function isLoggedInHandler(event) {
@@ -34,7 +35,8 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     (async () => {
-      setData((await axios.get(accSource)).data);
+      setAccounts((await axios.get(accUrlAccounts)).data);
+      setWerbung((await axios.get(accUrlWerbung)).data);
     })();
   }, []);
 
@@ -42,7 +44,8 @@ export const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         siteTitle,
-        data,
+        accounts,
+        werbung,
         currentAccount,
         setCurrentAccount,
         // currentLogindata,
