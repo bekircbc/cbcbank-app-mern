@@ -12,11 +12,10 @@ export const Login = () => {
   // }
   const {
     data,
+    currentAccount,
     setCurrentAccount,
+    setIsLoggedIn,
     isLoggedIn,
-    //   // setIsLoggedIn,
-    //   // currentLogindata,
-    setCurrentLogindata,
     //   isLoggedInHandler,
   } = useContext(AppContext);
 
@@ -25,19 +24,14 @@ export const Login = () => {
     const enteredId = idInputRef.current.value;
     const enteredPin = pinInputRef.current.value;
 
-    data.logindata.map((m) => {
-      if (m.id === enteredId && m.pin === enteredPin) {
-        setCurrentLogindata(m);
-        setCurrentAccount(
-          data.accounts.map(
-            (m) =>
-              m.owner === currentLogindata.owner &&
-              m.iban === currentLogindata.iban
-          )
-        );
-        setIsLoggedIn(true);
-      }
-    });
+    setCurrentAccount(
+      data.accounts.filter((m) => {
+        m.id === enteredId && m.pin === enteredPin;
+      })
+    );
+    console.log(currentAccount);
+
+    currentAccount ? setIsLoggedIn(true) : setIsLoggedIn(false);
   }
 
   return (

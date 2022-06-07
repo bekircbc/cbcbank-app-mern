@@ -3,7 +3,7 @@ import { TransferMoney } from "./components/TransferMoney";
 import { ChangeInfo } from "./components/ChangeInfo";
 import { RequestKredit } from "./components/RequestKredit";
 import { Login } from "./components/Login";
-import { SignIn } from "./components/SignIn";
+import { Home } from "./components/Home";
 import { FindBranch } from "./components/FindBranch.jsx";
 import { NavLink, Routes, Route, Navigate } from "react-router-dom";
 import { useContext } from "react";
@@ -21,23 +21,23 @@ function App() {
         {isLoggedIn ? (
           <>
             <div className="navbar">
+              <NavLink to="/home">Home</NavLink>
               <NavLink to="/transfermoney">Transfer Money</NavLink>
               <NavLink to="/changeinfo">Change Info</NavLink>
               <NavLink to="/requestkredit">Request Kredit</NavLink>
               <NavLink to="/findbranch">Find Branch</NavLink>
               <NavLink to="/login">Login</NavLink>
-              <NavLink to="/signin">Signin</NavLink>
             </div>
           </>
         ) : (
           <>
             <div className="navbar">
+              <NavLink to="/home">Home</NavLink>
               <NavLink to="/transfermoney">Transfer Money</NavLink>
               <NavLink to="/changeinfo">Change Info</NavLink>
               <NavLink to="/requestkredit">Request Kredit</NavLink>
               <NavLink to="/findbranch">Find Branch</NavLink>
               <NavLink to="/login">Login</NavLink>
-              <NavLink to="/signin">Signin</NavLink>
             </div>
           </>
         )}
@@ -45,25 +45,25 @@ function App() {
       {isLoggedIn ? (
         <>
           <Routes>
+            <Route path="/home" element={<Home />} />
             <Route path="/transfermoney" element={<TransferMoney />} />
             <Route path="/changeinfo" element={<ChangeInfo />} />
             <Route path="/requestkredit" element={<RequestKredit />} />
             <Route path="/findbranch" element={<FindBranch />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/" element={<Navigate to="/login" replace />} />
+            <Route path="/" element={<Navigate to="/home" replace />} />
           </Routes>
         </>
       ) : (
         <>
           <Routes>
+            <Route path="/home" element={<Home />} />
             <Route path="/transfermoney" element={<TransferMoney />} />
             <Route path="/changeinfo" element={<ChangeInfo />} />
             <Route path="/requestkredit" element={<RequestKredit />} />
             <Route path="/findbranch" element={<FindBranch />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/" element={<Navigate to="/login" replace />} />
+            <Route path="/" element={<Navigate to="/home" replace />} />
           </Routes>
         </>
       )}

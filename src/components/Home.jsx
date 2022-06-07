@@ -2,26 +2,24 @@ import { useContext } from "react";
 import { AppContext } from "../AppContext";
 
 export const Home = () => {
-  const {
-    data,
-    currentAccount,
-    isLoggedIn,
-    setIsLoggedIn,
-    currentLogindata,
-    setCurrentLogindata,
-  } = useContext(AppContext);
+  const { data, isLoggedIn } = useContext(AppContext);
+  console.log(data.werbung);
   return (
     <>
       <h1>Home</h1>
-      {isLoggedIn && (
+      {isLoggedIn ? (
         <>
-          {currentAccount.map((m) => {
-            <>
-              <h2>Welcome, {m.owner}</h2>
-              <div>{m.movements}</div>
-              <div>{m.movementsDates}</div>
-              <div>{m.currency}</div>
-            </>;
+          <div>Hallo</div>
+        </>
+      ) : (
+        <>
+          {data.werbung.map((m) => {
+            return (
+              <div>
+                <img src={m.url} alt={m.name} />
+                <h2>{m.name}</h2>
+              </div>
+            );
           })}
         </>
       )}
