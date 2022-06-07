@@ -11,8 +11,6 @@ export const AppProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentAccount, setCurrentAccount] = useState();
   const [currentLogindata, setCurrentLogindata] = useState();
-  const idInputRef = useRef();
-  const pinInputRef = useRef();
 
   function isLoggedInHandler(event) {
     event.preventDefault();

@@ -1,28 +1,65 @@
 {
+  "werbung": [
+    {
+      "id": 1,
+      "name": "A",
+      "url": "https://picsum.photos/520/460"
+    },
+    {
+      "id": 2,
+      "name": "B",
+      "url": "https://picsum.photos/521/461"
+    },
+    {
+      "id": 3,
+      "name": "C",
+      "url": "https://picsum.photos/522/462"
+    },
+    {
+      "id": 4,
+      "name": "C",
+      "url": "https://picsum.photos/523/463"
+    }
+  ],
   "logindata": [
     {
       "id": "1",
       "owner": "Keyser Söze",
       "iban": "DE4935",
-      "pin": 1111
+      "pin": 1111,
+      "isLoggedIn": false,
+      "isCurrentAccount": false,
+      "user": "customer"
     },
     {
       "id": "2",
       "owner": "Harold Finch",
       "iban": "DE4936",
-      "pin": 2222
+      "pin": 2222,
+      "isLoggedIn": false,
+      "user": "customer"
     },
     {
       "id": "3",
       "owner": "John Reese",
       "iban": "DE4937",
-      "pin": 3333
+      "pin": 3333,
+      "isLoggedIn": false,
+      "user": "customer"
     },
     {
       "id": "4",
       "owner": "Jonas Kahnwald",
       "iban": "DE4938",
-      "pin": 4444
+      "pin": 4444,
+      "isLoggedIn": false,
+      "user": "customer"
+    },
+    {
+      "id": "5",
+      "iban": "DE000001",
+      "owner": "admin",
+      "pin": 5555
     }
   ],
   "accounts": [

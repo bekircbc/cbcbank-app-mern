@@ -49,6 +49,9 @@ body {
         align-items: center;
         width: 25rem;
         gap: 0.5rem;
+        input {
+          border-bottom: 1px solid black;
+        }
         .btnLogin {
           width: 5rem;
         }

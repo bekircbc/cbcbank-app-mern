@@ -3,17 +3,42 @@ import { AppContext } from "../AppContext";
 // import { Home } from "./Home";
 
 export const Login = () => {
+  const idInputRef = useRef();
+  const pinInputRef = useRef();
+  // function submitHandler(e) {
+  //   e.preventDefault();
+  //   const enteredId = idInputRef.current.value;
+  //   const enteredPin = pinInputRef.current.value;
+  // }
   const {
-    // data,
-    // setCurrentAccount,
-    // isLoggedIn,
-    // setIsLoggedIn,
-    // currentLogindata,
-    // setCurrentLogindata,
-    isLoggedInHandler,
-    idInputRef,
-    pinInputRef,
+    data,
+    setCurrentAccount,
+    isLoggedIn,
+    //   // setIsLoggedIn,
+    //   // currentLogindata,
+    setCurrentLogindata,
+    //   isLoggedInHandler,
   } = useContext(AppContext);
+
+  function isLoggedInHandler(event) {
+    event.preventDefault();
+    const enteredId = idInputRef.current.value;
+    const enteredPin = pinInputRef.current.value;
+
+    data.logindata.map((m) => {
+      if (m.id === enteredId && m.pin === enteredPin) {
+        setCurrentLogindata(m);
+        setCurrentAccount(
+          data.accounts.map(
+            (m) =>
+              m.owner === currentLogindata.owner &&
+              m.iban === currentLogindata.iban
+          )
+        );
+        setIsLoggedIn(true);
+      }
+    });
+  }
 
   return (
     <div className="login">
