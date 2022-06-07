@@ -2,14 +2,13 @@ import { useContext } from "react";
 import { AppContext } from "../AppContext";
 
 export const Home = () => {
-  const { data, isLoggedIn } = useContext(AppContext);
-  console.log(data.werbung);
+  const { data, isLoggedIn, currentAccount } = useContext(AppContext);
   return (
     <>
       <h1>Home</h1>
       {isLoggedIn ? (
         <>
-          <div>Hallo</div>
+          <div>Welcome, {currentAccount.owner}</div>
         </>
       ) : (
         <>

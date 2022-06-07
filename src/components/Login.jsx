@@ -15,7 +15,7 @@ export const Login = () => {
     currentAccount,
     setCurrentAccount,
     setIsLoggedIn,
-    isLoggedIn,
+    // isLoggedIn,
     //   isLoggedInHandler,
   } = useContext(AppContext);
 

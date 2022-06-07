@@ -18,55 +18,29 @@ function App() {
           <img src="images/icon.png" alt="logo" />
           <h1>{siteTitle}</h1>
         </div>
-        {isLoggedIn ? (
-          <>
-            <div className="navbar">
-              <NavLink to="/home">Home</NavLink>
-              <NavLink to="/transfermoney">Transfer Money</NavLink>
-              <NavLink to="/changeinfo">Change Info</NavLink>
-              <NavLink to="/requestkredit">Request Kredit</NavLink>
-              <NavLink to="/findbranch">Find Branch</NavLink>
-              <NavLink to="/login">Login</NavLink>
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="navbar">
-              <NavLink to="/home">Home</NavLink>
-              <NavLink to="/transfermoney">Transfer Money</NavLink>
-              <NavLink to="/changeinfo">Change Info</NavLink>
-              <NavLink to="/requestkredit">Request Kredit</NavLink>
-              <NavLink to="/findbranch">Find Branch</NavLink>
-              <NavLink to="/login">Login</NavLink>
-            </div>
-          </>
-        )}
+
+        <div className="navbar">
+          <NavLink to="/home">Home</NavLink>
+          <NavLink to="/transfermoney">Transfer Money</NavLink>
+          <NavLink to="/changeinfo">Change Info</NavLink>
+          <NavLink to="/requestkredit">Request Kredit</NavLink>
+          <NavLink to="/findbranch">Find Branch</NavLink>
+          <NavLink to="/login">Login</NavLink>
+        </div>
       </div>
-      {isLoggedIn ? (
-        <>
-          <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route path="/transfermoney" element={<TransferMoney />} />
-            <Route path="/changeinfo" element={<ChangeInfo />} />
-            <Route path="/requestkredit" element={<RequestKredit />} />
-            <Route path="/findbranch" element={<FindBranch />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/" element={<Navigate to="/home" replace />} />
-          </Routes>
-        </>
-      ) : (
-        <>
-          <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route path="/transfermoney" element={<TransferMoney />} />
-            <Route path="/changeinfo" element={<ChangeInfo />} />
-            <Route path="/requestkredit" element={<RequestKredit />} />
-            <Route path="/findbranch" element={<FindBranch />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/" element={<Navigate to="/home" replace />} />
-          </Routes>
-        </>
-      )}
+
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/transfermoney" element={<TransferMoney />} />
+        <Route path="/changeinfo" element={<ChangeInfo />} />
+        <Route path="/requestkredit" element={<RequestKredit />} />
+        <Route path="/findbranch" element={<FindBranch />} />
+        <Route
+          path="/login"
+          element={isLoggedIn ? <Navigate to="/home" replace /> : <Login />}
+        />
+        <Route path="/" element={<Navigate to="/home" replace />} />
+      </Routes>
     </div>
   );
 }
