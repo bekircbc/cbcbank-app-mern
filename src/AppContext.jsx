@@ -40,6 +40,8 @@ export const AppProvider = ({ children }) => {
     })();
   }, []);
 
+  console.log(accounts, werbung);
+
   return (
     <AppContext.Provider
       value={{
