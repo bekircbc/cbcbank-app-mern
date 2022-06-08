@@ -23,11 +23,8 @@ export const Login = () => {
     event.preventDefault();
     const enteredId = idInputRef.current.value;
     const enteredPin = pinInputRef.current.value;
-
     setCurrentAccount(
-      accounts.filter((m) => {
-        m.id === enteredId && m.pin === enteredPin;
-      })
+      accounts.filter((m) => m.id === enteredId && m.pin === enteredPin)
     );
     console.log(currentAccount);
 
